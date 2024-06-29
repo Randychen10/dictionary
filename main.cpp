@@ -9,10 +9,8 @@ using namespace std;
 
 void intro(const unordered_set<string>& uniqueKeys, const list<string>& definitions) {
     cout << "====== DICTIONARY 340 C++ ======" << endl;
-    cout << "------ Keywords: " << uniqueKeys.size();
-    cout << endl;
-    cout << "------ Definitions: " << definitions.size();
-    cout << endl;
+    cout << "------ Keywords: " << uniqueKeys.size() << endl;
+    cout << "------ Definitions: " << definitions.size() << endl;
 }
 
 unordered_set<string> getUniqueKeys(const string&) {
@@ -76,6 +74,7 @@ list<string> countDefinitions(const string& filename) {
 }
 
 void dictSearch() {
+    cout << endl;
     fstream ioFile;
     ioFile.open("Data.CS.SFSU.txt", ios::in);
 
