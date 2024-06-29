@@ -74,7 +74,7 @@ list<string> countDefinitions(const string& filename) {
 }
 
 void helpMessage() {
-    cout << "    |" << endl;
+    cout << "     |" << endl;
     cout << "      PARAMETER HOW-TO, please enter:" << endl;
     cout << "      1. A search key -then 2. An optional part of speech -then" << endl;
     cout << "      3. An optional 'distinct' -then 4. An optional 'reverse'" << endl;
@@ -88,6 +88,7 @@ void dictSearch() {
     int searchCount = 1;
     string userInput;
 
+    cout << endl;
     while (true) {
         cout << "Search [" << searchCount << "]: ";
         getline(cin, userInput);
@@ -100,8 +101,6 @@ void dictSearch() {
         searchCount++;
     }
 }
-
-
 
 int main() {
     unordered_set<string> uniqueKeys = getUniqueKeys("Data.CS.SFSU.txt");
