@@ -73,6 +73,8 @@ list<string> countDefinitions(const string& filename) {
     return definitions;
 }
 
+void helpMessage(){
+
 void dictSearch() {
     cout << endl;
     fstream ioFile;
