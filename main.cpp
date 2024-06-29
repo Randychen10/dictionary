@@ -3,6 +3,7 @@
 #include<sstream>
 #include <unordered_set>
 #include <list>
+#include <map>
 #include <string>
 
 using namespace std;
@@ -28,18 +29,6 @@ unordered_set<string> getUniqueKeys(const string&) {
     return uniqueKeys;
 }
 
-// Function to trim leading and trailing whitespace
-string trim(const string& str) {
-    size_t front = str.find_first_not_of(" \t");
-    size_t back = str.find_last_not_of(" \t");
-
-    if (front == string::npos || back == string::npos) {
-        return "";
-    }
-
-    return str.substr(front, back - front + 1);
-}
-
 list<string> countDefinitions(const string& filename) {
     fstream ioFile;
     ioFile.open(filename, ios::in);
@@ -48,8 +37,6 @@ list<string> countDefinitions(const string& filename) {
     string line;
 
     while (getline(ioFile, line)) {
-        // Trim leading and trailing whitespace
-        line = trim(line);
 
         // Check if the line contains the arrow "-=>>"
         size_t arrowPos = line.find("-=>>");
@@ -84,6 +71,8 @@ void helpMessage() {
 void dictSearch() {
     fstream ioFile;
     ioFile.open("Data.CS.SFSU.txt", ios::in);
+
+    multimap<string, string> dictionary;
 
     int searchCount = 1;
     string userInput;
