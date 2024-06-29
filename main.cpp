@@ -73,7 +73,12 @@ list<string> countDefinitions(const string& filename) {
     return definitions;
 }
 
-void helpMessage(){
+void helpMessage() {
+    cout << "      PARAMETER HOW-TO, please enter:" << endl;
+    cout << "      1. A search key -then 2. An optional part of speech -then" << endl;
+    cout << "      3. An optional 'distinct' -then 4. An optional 'reverse'
+"
+}
 
 void dictSearch() {
     cout << endl;
