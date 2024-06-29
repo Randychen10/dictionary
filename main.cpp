@@ -74,26 +74,34 @@ list<string> countDefinitions(const string& filename) {
 }
 
 void helpMessage() {
+    cout << "    |" << endl;
     cout << "      PARAMETER HOW-TO, please enter:" << endl;
     cout << "      1. A search key -then 2. An optional part of speech -then" << endl;
-    cout << "      3. An optional 'distinct' -then 4. An optional 'reverse'
-"
+    cout << "      3. An optional 'distinct' -then 4. An optional 'reverse'" << endl;
+    cout << "     |" << endl;
 }
 
 void dictSearch() {
-    cout << endl;
     fstream ioFile;
     ioFile.open("Data.CS.SFSU.txt", ios::in);
 
     int searchCount = 1;
     string userInput;
-    cout << endl;
-    cout << "Search [" << searchCount << "]: ";
-    while (getline(cin, userInput) && userInput != "!q") {
-        searchCount++;
+
+    while (true) {
         cout << "Search [" << searchCount << "]: ";
+        getline(cin, userInput);
+
+        if (userInput == "!q") {
+            break;
+        } else if (userInput == "!help" || userInput.empty()) {
+            helpMessage();
+        }
+        searchCount++;
     }
 }
+
+
 
 int main() {
     unordered_set<string> uniqueKeys = getUniqueKeys("Data.CS.SFSU.txt");
